@@ -1,29 +1,37 @@
 import React, {Component} from "react";
+import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 export default class GenderResult extends Component {
-    state = {
-      boyPercentage: 0,
-      girlPercentage: 0
-    };
 
     constructor(props){
         super(props);
-        // console.log("ier");
-        // fetch("http://localhost:8080/gok/gender").then(response => {
-        //     response.json().then(r => {
-        //         console.log(r);
-        //     })
-        // });
-
-        // this.setState({boyPercentage: result.percentageBoys, girlPercentage: result.percentageGirls});
+        this.state = {
+            boyPercentage: 0,
+            girlPercentage: 0
+        };
+        this.updateData = this.updateData.bind(this);
     }
 
     render(){
+        this.updateData();
         return(
             <div>
-                <h1>boyPercentage: {this.state.boyPercentage}</h1>
-                <h1>girlPercentage: {this.state.girlPercentage}</h1>
+                <SemiCircleProgressBar percentage={this.state.boyPercentage} showPercentValue stroke="#89cff0" strokeWidth={20} />
+                <SemiCircleProgressBar percentage={this.state.girlPercentage} showPercentValue stroke="#FFB6C1" strokeWidth={20} />
             </div>
         );
+    }
+
+    updateData(){
+        let self = this;
+        fetch("http://localhost:8080/gok/gender").then(response => {
+            response.json().then(r => {
+                let boyPercentage = r.percentageBoys;
+                let girlPercentage = r.percentageGirls;
+                if(!isNaN(boyPercentage) && !isNaN(girlPercentage) && (boyPercentage !== self.state.boyPercentage || girlPercentage !== self.state.girlPercentage)){
+                    self.setState({boyPercentage: boyPercentage, girlPercentage: girlPercentage});
+                }
+            })
+        });
     }
 }

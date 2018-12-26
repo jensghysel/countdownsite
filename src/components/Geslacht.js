@@ -17,40 +17,39 @@ export default class Geslacht extends Component {
     render() {
         return (
             <section className="section container">
-                <h2 className="section-title">
+                <h2 className="section-title" style={{"margin-bottom": "0px"}}>
                     <span>Scorebord</span>
                 </h2>
                 <GenderResult />
                 <h2 className="section-title">
                     <span>Jouw pronostiek</span>
                 </h2>
-                <form onSubmit={this.handleSubmit} style={{width: '30%', margin: '0 auto'}}>
+                <form onSubmit={this.handleSubmit} className="genderForm">
                     <div className="form-group">
-                        <label className="radio-inline">
-                            <p>boy</p>
+                        <label className="radio-inline genderLabel">
+                            <img src="static/img/itsaboy.png" /> <br />
                             <input name="gender" type="radio" id="inlineRadio1" value="boy"
                                    checked={this.state.gender === 'boy'} onChange={this.handleChange}/>
                         </label>
-                        <label className="radio-inline">
-                            <p>girl</p>
+                        <label className="radio-inline genderLabel marginLeftTen">
+                            <img src="static/img/itsagirl.png" /> <br />
                             <input name="gender" type="radio" id="inlineRadio2" value="girl"
                                    checked={this.state.gender === 'girl'} onChange={this.handleChange}/>
                         </label>
                     </div>
-                    <br/>
+                    <br/><br />
                     <div className="form-group">
-                        <label htmlFor="exampleInputName2">Naam</label>
+                        {/*<label htmlFor="exampleInputName2">Naam</label>*/}
                         <input required type="text" name="name" value={this.state.name} onChange={this.handleChange}
-                               className="form-control" id="exampleInputName2" placeholder="Julie Castelein"
-                               style={{textAlign: "center"}}/>
+                               className="form-control" id="exampleInputName2" placeholder="Baby Naam" />
                     </div>
                     <br/>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email</label>
+                        {/*<label htmlFor="exampleInputEmail1">Email</label>*/}
                         <input required type="email" name="email" value={this.state.email} onChange={this.handleChange}
                                className="form-control" id="exampleInputEmail1"
-                               placeholder="juliecastelein@jensiscewl.com" style={{textAlign: "center"}}/>
-                    </div>
+                               placeholder="email adres"/>
+                    </div><br />
                     <input type="submit" value="Submit" className="btn btn-default"/>
                 </form>
             </section>

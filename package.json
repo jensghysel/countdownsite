@@ -20,10 +20,13 @@
     "popper.js": "^1.14.6",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
+    "react-alert": "^4.0.4",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-progressbar-semicircle": "^1.2.1",
-    "react-simple-lightbox": "^1.0.26"
+    "react-simple-lightbox": "^1.0.26",
+    "react-transition-group": "^2.5.2"
   },
   "keywords": [
     "gatsby"

@@ -18,11 +18,11 @@ export default class GenderResult extends Component {
             <div>
                 <div style={{display: "inline-block"}}>
                     <h1 className="genderTitle" style={{color: "#0077bf"}}>Boy</h1>
-                    <SemiCircleProgressBar percentage={this.state.boyPercentage} showPercentValue stroke="#89cff0" strokeWidth={20} diameter={150} />
+                    <SemiCircleProgressBar percentage={parseFloat(Math.round(this.state.boyPercentage * 100) / 100).toFixed(2)} showPercentValue stroke="#89cff0" strokeWidth={20} diameter={150} />
                 </div>
                 <div style={{display: "inline-block", marginLeft: "5%"}}>
                     <h1 className="genderTitle" style={{color: "#de65ab"}}>Girl</h1>
-                    <SemiCircleProgressBar percentage={this.state.girlPercentage} showPercentValue stroke="#FFB6C1" strokeWidth={20} diameter={150} />
+                    <SemiCircleProgressBar percentage={parseFloat(Math.round(this.state.girlPercentage * 100) / 100).toFixed(2)} showPercentValue stroke="#FFB6C1" strokeWidth={20} diameter={150} />
                 </div>
             </div>
         );

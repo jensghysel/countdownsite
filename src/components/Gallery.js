@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import Lightbox from "react-simple-lightbox";
+/* eslint-disable */
 
 export default class Gallery extends Component {
     render(){

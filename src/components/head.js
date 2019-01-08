@@ -1,5 +1,6 @@
 import {Component} from "react";
 import React from "react";
+/* eslint-disable */
 
 export default class Head extends Component {
     render(){

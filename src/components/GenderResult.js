@@ -30,7 +30,7 @@ export default class GenderResult extends Component {
 
     updateData(){
         let self = this;
-        fetch("http://localhost:8080/gok/gender", {headers: {'Auth': 'JKLDGHBKSZDFQ135QDZQ3F3QDFZ31'}}).then(response => {
+        fetch("http://localhost:8080/gok/gender", {headers: {'AUTH': 'JKLDGHBKSZDFQ135QDZQ3F3QDFZ31'}}).then(response => {
             response.json().then(r => {
                 let boyPercentage = r.percentageBoys;
                 let girlPercentage = r.percentageGirls;

@@ -29,12 +29,12 @@ class Geslacht extends Component {
                     <form onSubmit={this.handleSubmit} className="genderForm">
                         <div className="form-group">
                             <label className="radio-inline genderLabel">
-                                <img src="static/img/itsaboy.png"/> <br/>
+                                <img src="static/img/itsaboy.png" alt="its a boy" /> <br/>
                                 <input name="gender" type="radio" id="inlineRadio1" value="boy"
                                        checked={this.state.gender === 'boy'} onChange={this.handleChange}/>
                             </label>
                             <label className="radio-inline genderLabel marginLeftTen">
-                                <img src="static/img/itsagirl.png"/> <br/>
+                                <img src="static/img/itsagirl.png" alt="its a girl" /> <br/>
                                 <input name="gender" type="radio" id="inlineRadio2" value="girl"
                                        checked={this.state.gender === 'girl'} onChange={this.handleChange}/>
                             </label>
@@ -74,7 +74,7 @@ class Geslacht extends Component {
     _storeGokje() {
         fetch('http://localhost:8080/gok', {
             method: 'post',
-            headers: {'Content-Type': 'application/json', 'Auth': 'JKLDGHBKSZDFQ135QDZQ3F3QDFZ31'},
+            headers: {'Content-Type': 'application/json', 'AUTH': 'JKLDGHBKSZDFQ135QDZQ3F3QDFZ31'},
             body: JSON.stringify(this.state)
         }).then(response => {
             if (response.status === 200) {

@@ -74,7 +74,7 @@ class Geslacht extends Component {
     _storeGokje() {
         fetch('http://localhost:8080/gok', {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json', 'Auth': 'JKLDGHBKSZDFQ135QDZQ3F3QDFZ31'},
             body: JSON.stringify(this.state)
         }).then(response => {
             if (response.status === 200) {
